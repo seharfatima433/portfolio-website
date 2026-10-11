@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--
+  Project : Professional Personal Portfolio Website
+  Author  : Sehar Fatima
+  Program : Devixo Solutions - Web Development Internship, Task 01
+  Built with: HTML5 and CSS3 only (no frameworks, no templates, no JavaScript)
+
+  Page structure:
+    header  -> logo, navigation bar, contact shortcuts
+    main    -> Home (hero), About, Skills, Education, Projects, Contact
+    footer  -> name, quick links, social links, copyright
+  All styling lives in style.css.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Sehar Fatima, Full-Stack and AI Engineer.">
+  <title>Sehar Fatima | Full-Stack &amp; AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Icons used by the header, buttons and footer (defined once, reused with <use>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1 2v.5l8 5 8-5V7H4zm16 3.1l-8 5-8-5V17h16v-6.9z"/></symbol>
+  </svg>
+
+  <!-- Soft decorative background shapes (purely visual, hidden from screen readers) -->
+  <div class="blob blob-one" aria-hidden="true"></div>
+  <div class="blob blob-two" aria-hidden="true"></div>
+
+  <!-- Navigation (mobile menu uses a CSS-only checkbox, no JavaScript) -->
+  <header class="site-header">
+    <a href="#home" class="logo"><span class="logo-badge">SF</span><span class="logo-name">Sehar Fatima</span></a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-button">Menu</label>
+    <nav class="main-nav" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="mailto:seharfatima.dev@gmail.com" class="pill-link nav-email"><svg class="icon"><use href="#i-mail"/></svg>seharfatima.dev@gmail.com</a>
+      <a href="https://github.com/seharfatima433" class="icon-btn" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon"><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/sehar-fatima-895aa035a" class="icon-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== 1. HOME / HERO: name, tagline, short intro, call-to-action buttons, profile photo ===== -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Meet the developer</p>
+        <h1>Hi! I am <em>Sehar Fatima</em></h1>
+        <p class="tagline">Full-Stack Engineer &amp; AI Developer</p>
+        <p class="lead">A passionate IT engineer building modern web applications, AI tools and interactive web experiences with Laravel, React and Gemini.</p>
+        <a href="#projects" class="btn btn-solid">See my work</a>
+        <a href="#about" class="btn btn-outline">About me</a>
+      </div>
+      <!-- Photo card: <figure> groups the photo, floating tech tiles and a caption -->
+      <figure class="photo-card">
+        <!-- Profile photo: images/profile.jpeg (set as a CSS background in style.css) -->
+        <div class="photo hero-img" role="img" aria-label="Portrait of Sehar Fatima"><span>SF</span></div>
+        <span class="tile tile-tl">Laravel</span><span class="tile tile-tr">React</span>
+        <span class="tile tile-bl">Node.js</span><span class="tile tile-br">Python</span>
+        <figcaption><strong>Sehar Fatima</strong><span>seharfatima.dev@gmail.com</span></figcaption>
+      </figure>
+    </section>
+
+    <!-- ===== 2. ABOUT: introduction, academic background, career interests, stats ===== -->
+    <section id="about" class="section about">
+      <figure class="photo-card">
+        <!-- About image: images/hijabi_hero.png (set as a CSS background in style.css) -->
+        <div class="photo about-img" role="img" aria-label="Sehar Fatima working on code"><span>SF</span></div>
+        <span class="tile tile-tl">Laravel</span><span class="tile tile-tr">React</span>
+        <span class="tile tile-bl">Node.js</span><span class="tile tile-br">Python</span>
+        <figcaption><strong>Working on code</strong><span>Nankana Sahib, Pakistan</span></figcaption>
+      </figure>
+      <div class="about-text">
+        <p class="eyebrow">About me</p>
+        <h2>Crafting High-Impact <em>Web &amp; AI Solutions</em></h2>
+        <p>I'm a full-stack software engineer who enjoys taking a feature from first design to launch. I build interfaces with React, backends and APIs with Laravel and Node.js, and mobile apps with Flutter. I work as a web developer at Baba Guru Nanak University and take on freelance projects from requirements to deployment.</p>
+        <!-- Definition list: label (dt) and value (dd) pairs -->
+        <dl class="facts">
+          <div><dt>Academic background</dt><dd>BS Information Technology, Baba Guru Nanak University (2026)</dd></div>
+          <div><dt>Career interests</dt><dd>AI-powered web products, RAG systems, computer vision, mobile apps</dd></div>
+        </dl>
+        <ul class="stats">
+          <li><strong>2+</strong><span>Years of experience</span></li>
+          <li><strong>10+</strong><span>Projects completed</span></li>
+          <li><strong>15+</strong><span>Technologies used</span></li>
+        </ul>
+        <a href="mailto:seharfatima.dev@gmail.com" class="btn btn-solid"><svg class="icon"><use href="#i-mail"/></svg>Email me directly</a>
+        <a href="https://github.com/seharfatima433" class="btn btn-outline" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg>GitHub</a>
+        <a href="https://www.linkedin.com/in/sehar-fatima-895aa035a" class="btn btn-outline" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- ===== 3. SKILLS: grouped skill cards (only skills I actually use) ===== -->
+    <section id="skills" class="section">
+      <p class="eyebrow">Toolkit &amp; stack</p>
+      <h2>Technologies &amp; <em>tools</em></h2>
+      <div class="skills-grid">
+        <article class="card skill-card">
+          <span class="num">01</span><h3>Backend &amp; AI</h3>
+          <ul class="chips"><li>Laravel</li><li>PHP</li><li>Node.js</li><li>Python</li><li>MySQL</li><li>Gemini AI</li><li>Pinecone</li></ul>
+        </article>
+        <article class="card skill-card">
+          <span class="num">02</span><h3>Frontend &amp; 3D</h3>
+          <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li><li>Three.js</li><li>Responsive design</li></ul>
+        </article>
+        <article class="card skill-card">
+          <span class="num">03</span><h3>Tools &amp; mobile</h3>
+          <ul class="chips"><li>Git &amp; GitHub</li><li>Flutter</li><li>Firebase</li><li>Figma</li><li>Postman</li><li>VS Code</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 4. EDUCATION: degree, university, period, achievements, certification ===== -->
+    <section id="education" class="section">
+      <p class="eyebrow">Academic background</p>
+      <h2>Education &amp; <em>certification</em></h2>
+      <div class="edu-grid">
+        <article class="card edu-card">
+          <h3>Bachelor of Science in Information Technology</h3>
+          <p class="edu-meta">Baba Guru Nanak University, Nankana Sahib &middot; Completed October 2026</p>
+          <p>Coursework: Web Development, Database Systems, UI/UX Design, Internet of Everything.</p>
+          <ul>
+            <li>2nd place at a university-wide tech festival for web design.</li>
+            <li>Certificates in Python Programming, HTML for Absolute Beginners and Office Management.</li>
+          </ul>
+        </article>
+        <article class="card nsct-card">
+          <p class="nsct-score">82.7<small>percentile</small></p>
+          <h3>HEC National Skills Certification Test</h3>
+          <p>Top 17.3% of IT students in Pakistan across 10 core computing domains (April 2026).</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 5. PROJECTS: three project cards (thumbnail, description, technologies, live link) ===== -->
+    <section id="projects" class="section">
+      <p class="eyebrow">Featured work</p>
+      <h2>Selected <em>projects</em></h2>
+      <div class="projects-grid">
+        <article class="card project-card">
+          <div class="project-thumb thumb-1" role="img" aria-label="MoodBrew coffee ordering website screenshot"></div>
+          <div class="project-body">
+            <p class="tag">Food ordering</p>
+            <h3>MoodBrew</h3>
+            <p>A coffee ordering website where you pick your mood to find the right cup. It shows where the beans come from (Trace to Farm), suggests bakery pairings, gives reward beans on every order, and supports cash on delivery.</p>
+            <ul class="chips"><li>Laravel</li><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
+            <a href="https://devlura.site/MoodBrew/public/" class="btn btn-solid" target="_blank" rel="noopener">Live demo</a>
+          </div>
+        </article>
+        <article class="card project-card">
+          <div class="project-thumb thumb-2" role="img" aria-label="AI Exam Proctoring screenshot"></div>
+          <div class="project-body">
+            <p class="tag">Computer vision</p>
+            <h3>AI Exam Proctoring</h3>
+            <p>Monitors online exams with live gaze tracking, detects more than one person in frame, and logs flagged incidents automatically.</p>
+            <ul class="chips"><li>Laravel</li><li>Computer Vision</li><li>AJAX</li><li>MySQL</li><li>Bootstrap</li></ul>
+            <a href="https://devlura.site/web-cheating-detection-main/public/" class="btn btn-solid" target="_blank" rel="noopener">Live demo</a>
+          </div>
+        </article>
+        <article class="card project-card">
+          <div class="project-thumb thumb-3" role="img" aria-label="Full-Stack E-Commerce screenshot"></div>
+          <div class="project-body">
+            <p class="tag">Web application</p>
+            <h3>Full-Stack E-Commerce</h3>
+            <p>An online store built from scratch with product filtering, a shopping cart, checkout and payment gateway integration.</p>
+            <ul class="chips"><li>Laravel</li><li>MySQL</li><li>Payment Gateway</li><li>JavaScript ES6</li><li>Tailwind</li></ul>
+            <a href="https://devlura.site/E-Commerce/public/" class="btn btn-solid" target="_blank" rel="noopener">Live demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 6. CONTACT: email, phone, location, social links and a contact form ===== -->
+    <section id="contact" class="section">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Let's work <em>together</em></h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>Have a project or an opportunity? Send me a message.</p>
+          <ul>
+            <li><strong>Email</strong><a href="mailto:seharfatima.dev@gmail.com">seharfatima.dev@gmail.com</a></li>
+            <li><strong>Phone</strong><a href="tel:+923328901200">+92 332 8901200</a></li>
+            <li><strong>Location</strong><span>Nankana Sahib, Punjab, Pakistan</span></li>
+          </ul>
+          <p class="socials">
+            <a href="https://github.com/seharfatima433" class="btn btn-outline" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg>GitHub</a>
+            <a href="https://www.linkedin.com/in/sehar-fatima-895aa035a" class="btn btn-outline" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </p>
+        </div>
+        <!-- Contact form is UI only (no backend); "required" gives basic browser validation -->
+        <form class="card contact-form" action="#" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit" class="btn btn-solid">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER: name, quick navigation, social links, copyright ===== -->
+  <footer class="site-footer">
+    <p class="footer-name">Sehar Fatima</p>
+    <nav aria-label="Footer">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/seharfatima433" class="foot-icon" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon"><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/sehar-fatima-895aa035a" class="foot-icon" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+    </nav>
+    <p class="copyright">&copy; 2026 Sehar Fatima. All rights reserved.</p>
+  </footer>
+</body>
+</html>
